@@ -4,7 +4,7 @@ Monster Killer is a basic JavaScript game or application which is played by one 
 
 ## Click Here
 
-[Click here](https://iamsomraj.github.io/Monster-Killer-JS-Game/) to see my project.
+[Click here](https://iamsomraj.github.io/Monster-Killer-JS-Game/index.html) to see my project.
 
 ## Objectives
 
