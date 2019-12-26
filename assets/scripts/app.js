@@ -29,15 +29,22 @@ function writeToLog(
   logEntries.push(logEntry);
 }
 
-let userInputHealthValue = parseInt(
-  prompt('Enter the maximum health value: ', '100')
-);
-
-if (isNaN(userInputHealthValue) || userInputHealthValue <= 0) {
-  userInputHealthValue = 100;
+function getUserInput() {
+  let userInputHealthValue = parseInt(
+    prompt('Enter the maximum health value: ', '100')
+  );
+  if (isNaN(userInputHealthValue) || userInputHealthValue <= 0) {
+    throw { message: 'ERROR: No number is obtained from the user' };
+  }
+  return userInputHealthValue;
 }
 
-let maximumHealthValue = userInputHealthValue;
+let maximumHealthValue;
+try {
+  maximumHealthValue = getUserInput();
+} catch (errorObject) {
+  maximumHealthValue = 100;
+}
 
 let hasBonusLife = true;
 
@@ -76,7 +83,7 @@ function gameCheck() {
     alert('You win!');
     writeToLog(
       logGameOver,
-      "Player Win!",
+      'Player Win!',
       currentPlayerHealthValue,
       currentMonsterHealthValue
     );
@@ -85,7 +92,7 @@ function gameCheck() {
     alert('You Lose!');
     writeToLog(
       logGameOver,
-      "Monster Win!",
+      'Monster Win!',
       currentPlayerHealthValue,
       currentMonsterHealthValue
     );
@@ -94,7 +101,7 @@ function gameCheck() {
     alert('Game Draw!');
     writeToLog(
       logGameOver,
-      "Game is drawn!",
+      'Game is drawn!',
       currentPlayerHealthValue,
       currentMonsterHealthValue
     );
@@ -157,7 +164,12 @@ function healPlayerHandler() {
 }
 
 function logHandler() {
-  console.log(logEntries);
+  for (const logEntry of logEntries) {
+    for (const key in logEntry) {
+      console.log(key + ': ' + logEntry[key]);
+    }
+    console.log('\n');
+  }
 }
 
 attackBtn.addEventListener('click', attackMonsterHandler);

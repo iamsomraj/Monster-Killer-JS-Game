@@ -1,6 +1,6 @@
 # Monster Killer
 
-Monster Killer is a basic JavaScript game or application which is played by one user. The user has 3 basic operations. Those operations are Attack, Strong Attack and Heal. All the operations are printed on the console of the browser.
+Monster Killer is a basic JavaScript game or application which is played by one user. The user has 3 basic operations. Those operations are Attack, Strong Attack and Heal. During each operation, the Monster also attacks. The goal is to survive and kill the monster. All the operations are printed on the console of the browser when the show log button is pressed.
 
 ## Click Here
 
@@ -13,6 +13,8 @@ Monster Killer is a basic JavaScript game or application which is played by one 
 3. Using flag variables for comparison
 4. Implementing prompt() and alert() methods
 5. Distinguishing between boolean and truthy-falsy values
+6. Handling error objects with try catch 
+7. Understanding for of loop ( array ) and for in ( objects )
 
 ## Developer
 
